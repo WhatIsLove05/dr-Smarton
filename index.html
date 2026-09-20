@@ -284,9 +284,50 @@
   .header-search input{opacity:1!important;pointer-events:auto!important;}
   .head-actions{order:3!important;margin-left:0!important;flex:0 0 auto!important;}
 }
-</style></head><body>
+</style>
+<style>
+/* v34 — desktop catalog hamburger placed to the left of DSP logo */
+@media (min-width:761px){
+  .head-inner{gap:12px!important;}
+  .desktop-catalog{
+    order:1!important;
+    margin:0!important;
+    flex:0 0 auto!important;
+  }
+  .desktop-catalog-toggle{
+    width:42px!important;
+    height:42px!important;
+    padding:0!important;
+    justify-content:center!important;
+    border:0!important;
+    border-radius:6px!important;
+    background:#fff!important;
+    font-size:0!important;
+  }
+  .desktop-catalog-toggle::before{
+    content:'☰';
+    font-size:22px!important;
+    line-height:1!important;
+    font-weight:700!important;
+  }
+  .desktop-catalog-toggle span{display:none!important;}
+  .desktop-catalog-menu{
+    left:0!important;
+    right:auto!important;
+    top:50px!important;
+  }
+  .brand{order:2!important;}
+  .header-search{order:3!important;}
+  .head-actions{order:4!important;}
+}
+@media (max-width:760px){
+  /* Keep mobile header exactly as before */
+  .desktop-catalog{display:none!important;}
+}
+</style>
+</head><body>
 <div class="storebar"><div>⌖ ТК «Горбушкин двор» <b>8 (977) 867-15-17</b></div><div>⌖ ТК «Савёловский» <b>8 (939) 000-43-45</b></div></div>
-<header class="header"><div class="head-inner"><button class="icon-btn menu-btn">☰</button><a class="brand" href="#" data-home><i>D</i><i>S</i><i>P</i><span>Dr.Smarton<small>APPLE PARTS & SERVICE</small></span></a><div class="desktop-catalog" id="desktopCatalog"><button class="desktop-catalog-toggle" id="desktopCatalogToggle" aria-expanded="false">КАТАЛОГ <span>⌄</span></button><div class="desktop-catalog-menu" id="desktopCatalogMenu"><div class="desktop-catalog-col"><small>ЗАПЧАСТИ</small><button data-catalog-device="iPhone">iPhone</button><button data-catalog-device="iPad">iPad</button><button data-catalog-device="Mac">Mac</button><button data-catalog-device="Apple Watch">Apple Watch</button><button data-catalog-device="AirPods">AirPods</button><button data-catalog-device="Accessories">Аксессуары</button><button data-catalog-device="Tools">Инструменты</button><button data-catalog-device="Consumables">Расходные материалы</button></div><div class="desktop-catalog-col"><small>УСЛУГИ</small><button data-catalog-service="Переклейка">Услуги переклейки</button><button data-catalog-service="Пайка">Услуги пайки</button><button data-catalog-service="Сервис">Услуги сервиса</button><button data-catalog-service="Сервисные центры">Для сервисных центров</button></div><div class="desktop-catalog-footer"><button data-catalog-all>Смотреть весь каталог →</button></div></div></div><div class="header-search" id="headerSearch"><input id="searchInput" placeholder="Поиск запчастей…" autocomplete="off"><button class="search-clear" id="searchClear" aria-label="Очистить">×</button><button class="search-icon" id="searchToggle" aria-label="Поиск">⌕</button><div id="suggestions"></div></div><div class="head-actions"><button class="cart-btn">КОРЗИНА <b id="cartCount">0</b></button></div></div></header>
+<header class="header"><div class="head-inner"><button class="icon-btn menu-btn">☰</button><div class="desktop-catalog" id="desktopCatalog"><button class="desktop-catalog-toggle" id="desktopCatalogToggle" aria-expanded="false">☰</button><div class="desktop-catalog-menu" id="desktopCatalogMenu"><div class="desktop-catalog-col"><small>ЗАПЧАСТИ</small><button data-catalog-device="iPhone">iPhone</button><button data-catalog-device="iPad">iPad</button><button data-catalog-device="Mac">Mac</button><button data-catalog-device="Apple Watch">Apple Watch</button><button data-catalog-device="AirPods">AirPods</button><button data-catalog-device="Accessories">Аксессуары</button><button data-catalog-device="Tools">Инструменты</button><button data-catalog-device="Consumables">Расходные материалы</button></div><div class="desktop-catalog-col"><small>УСЛУГИ</small><button data-catalog-service="Переклейка">Услуги переклейки</button><button data-catalog-service="Пайка">Услуги пайки</button><button data-catalog-service="Сервис">Услуги сервиса</button><button data-catalog-service="Сервисные центры">Для сервисных центров</button></div><div class="desktop-catalog-footer"><button data-catalog-all>Смотреть весь каталог →</button></div></div></div><a class="brand" href="#" data-home><i>D</i><i>S</i><i>P</i><span>Dr.Smarton<small>APPLE PARTS & SERVICE</small></span></a><div class="header-search" id="headerSearch"><input id="searchInput" placeholder="Поиск запчастей…" autocomplete="off"><button class="search-clear" id="searchClear" aria-label="Очистить">×</button><button class="search-icon" id="searchToggle" aria-label="Поиск">⌕</button><div id="suggestions"></div></div><div class="head-actions"><button class="cart-btn">КОРЗИНА <b id="cartCount">0</b></button></div></div></header>
 <main>
 <section class="hero"><div class="hero-bg"></div><div class="hero-copy"><small>ORIGINAL • OEM • PREMIUM</small><h1>Оригинальные<br>запчасти Apple</h1><p>для сервисных центров<br>и частных клиентов</p><div class="hero-benefits"><span>◉ Гарантия<br>на детали</span><span>▱ Быстрая<br>доставка</span><span>⚙ Поддержка<br>специалиста</span></div><button class="primary" id="catalogHero">Открыть каталог →</button></div></section>
 <section class="catalog-shell" id="catalogSection"><div class="catalog-title"><div><small>DR.SMARTON / ЗАПЧАСТИ</small><h2>Каталог запчастей</h2></div><button class="filter-mobile" id="mobileFilters">ФИЛЬТРЫ</button></div>
