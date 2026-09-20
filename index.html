@@ -174,6 +174,40 @@
   }
 }
 
+
+/* v30 — desktop search fills the exact space between logo and cart */
+@media (min-width:761px){
+  .head-inner{
+    display:flex!important;
+    align-items:center!important;
+    gap:18px!important;
+  }
+  .brand{
+    flex:0 0 auto!important;
+  }
+  .header-search{
+    order:2!important;
+    margin-left:0!important;
+    margin-right:0!important;
+    flex:1 1 auto!important;
+    width:auto!important;
+    min-width:190px!important;
+    max-width:none!important;
+    transition:all .28s ease!important;
+  }
+  .header-search.expanded{
+    flex:1 1 auto!important;
+    width:auto!important;
+    min-width:190px!important;
+    max-width:none!important;
+  }
+  .head-actions{
+    order:3!important;
+    margin-left:0!important;
+    flex:0 0 auto!important;
+  }
+}
+
 </style></head><body>
 <div class="storebar"><div>⌖ ТК «Горбушкин двор» <b>8 (977) 867-15-17</b></div><div>⌖ ТК «Савёловский» <b>8 (939) 000-43-45</b></div></div>
 <header class="header"><div class="head-inner"><button class="icon-btn menu-btn">☰</button><a class="brand" href="#" data-home><i>D</i><i>S</i><i>P</i><span>Dr.Smarton<small>APPLE PARTS & SERVICE</small></span></a><div class="header-search" id="headerSearch"><button class="search-icon" id="searchToggle" aria-label="Поиск">⌕</button><input id="searchInput" placeholder="Поиск запчастей…" autocomplete="off"><button class="search-clear" id="searchClear" aria-label="Очистить">×</button><div id="suggestions"></div></div><div class="head-actions"><button class="cart-btn">КОРЗИНА <b id="cartCount">0</b></button></div></div></header>
@@ -222,4 +256,21 @@ document.addEventListener('keydown',function(e){
     if(hs) hs.classList.remove('expanded');
   }
 });
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const hs=document.querySelector('.header-search');
+  const input=document.querySelector('#searchInput');
+  if(!hs || !input) return;
+  input.addEventListener('focus',function(){
+    if(window.innerWidth>760) hs.classList.add('expanded');
+  });
+  document.addEventListener('click',function(e){
+    if(window.innerWidth>760 && !hs.contains(e.target) && !input.value.trim()){
+      hs.classList.remove('expanded');
+    }
+  });
+});
+</script>
+
 </body></html>
